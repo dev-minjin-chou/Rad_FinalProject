@@ -1,7 +1,16 @@
-<li city = "City-<%= clock.city %>">
-    <div class="time">
-        <%= clock.city %>
-        <%= Time.now.in_time_zone(clock.offset).strftime("%I:%M%p")  %>
-        
+<div class = "one">
+    <div class="city"><%= clock.city %>
+        <p style="margin-left: 2.5em;padding: 0;font-size: 1.7em;color: #483D8B"><%= Time.now.in_time_zone(clock.offset).strftime("%I:%M%p")  %></p>
     </div>
-</li>
+    <% if Time.now.in_time_zone(clock.offset).strftime("%H").to_i >= 9 && Time.now.in_time_zone(clock.offset).strftime("%H").to_i < 18%>
+    <i class="fas fa-business-time"></i> 
+    <% elsif Time.now.in_time_zone(clock.offset).strftime("%H").to_i >= 18 && Time.now.in_time_zone(clock.offset).strftime("%H").to_i < 20%>
+    <i class="fas fa-clock"></i>
+    <% elsif Time.now.in_time_zone(clock.offset).strftime("%H").to_i >= 8 && Time.now.in_time_zone(clock.offset).strftime("%H").to_i < 9%>
+    <i class="fas fa-male"></i> 
+    <% elsif Time.now.in_time_zone(clock.offset).strftime("%H").to_i >= 20 && Time.now.in_time_zone(clock.offset).strftime("%H").to_i < 23%>
+    <i class="fas fa-male"></i>
+    <% else%>
+    <i class="fas fa-moon"></i>
+    <%end%>
+</div>
