@@ -1,0 +1,52 @@
+<%= form_with(model: clock, local: true) do |form| %>
+  <% if clock.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(clock.errors.count, "error") %> prohibited this clock from being saved:</h2>
+
+      <ul>
+      <% clock.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :value %>
+    <%= form.text_field :value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :abbr %>
+    <%= form.text_field :abbr %>
+  </div>
+
+  <div class="field">
+    <%= form.label :offset %>
+    <%= form.number_field :offset %>
+  </div>
+
+  <div class="field">
+    <%= form.label :isdst %>
+    <%= form.check_box :isdst %>
+  </div>
+
+  <div class="field">
+    <%= form.label :text %>
+    <%= form.text_field :text %>
+  </div>
+
+  <div class="field">
+    <%= form.label :utc %>
+    <%= form.text_field :utc %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

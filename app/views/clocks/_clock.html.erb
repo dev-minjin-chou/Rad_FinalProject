@@ -1,0 +1,7 @@
+<li city = "City-<%= clock.city %>">
+    <div class="time">
+        <%= clock.city %>
+        <%= Time.now.in_time_zone(clock.offset).strftime("%I:%M%p")  %>
+        
+    </div>
+</li>
