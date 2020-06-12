@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @clock.value %>
+</p>
+
+<p>
+  <strong>Abbr:</strong>
+  <%= @clock.abbr %>
+</p>
+
+<p>
+  <strong>Offset:</strong>
+  <%= @clock.offset %>
+</p>
+
+<p>
+  <strong>Isdst:</strong>
+  <%= @clock.isdst %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @clock.text %>
+</p>
+
+<p>
+  <strong>Utc:</strong>
+  <%= @clock.utc %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @clock.city %>
+</p>
+
+<%= link_to 'Edit', edit_clock_path(@clock) %> |
+<%= link_to 'Back', clocks_path %>
